@@ -1,0 +1,223 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+}
+.backgroundContainer{
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(185, 41%, 84%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logoContainer{
+    height: 150px;
+}
+.mainContainer{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 20px;
+    align-items: center;
+}
+.calculateSection{
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.billing{
+    width: 80%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.billingHeadline{
+    font-size: 1rem;
+    color: hsl(186, 14%, 43%);
+}
+.billing input{
+    width: 95%;
+    height: 50px;
+    border-radius: 9px;
+    background-color: hsl(189, 41%, 95%);
+    border: none;
+    background-image: url(/images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: center left 1rem;
+    text-align: end;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    color: hsl(183, 100%, 15%);
+    font-weight: 900;
+    font-weight: bolder;
+}
+.billing input::placeholder{
+    padding-right: 1rem;
+    font-weight: 500;
+    color:hsl(184, 14%, 56%);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+ input[type=number] {
+    -moz-appearance: textfield;
+}    
+.tipSelecting{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.tipSelectingHeadline{
+    font-size: 1rem;
+    color:  hsl(186, 14%, 43%);
+}
+.tips{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: .8rem;
+}
+.tipBlock{
+    width: 120px;
+    height: 60px;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+}
+#fiveCent, #tenCent, #fifteenCent, #twentyFiveCent, #fiftyCent{
+    cursor: pointer;
+}
+.tipBlock:hover{
+    background-color:hsl(185, 41%, 84%);
+    transition: .5s;
+}
+.tips input{
+    outline: none;
+    border: none;
+    text-align: center;
+}
+#customTip{
+    background-color: hsl(189, 41%, 95%);
+    color: #006166;
+    font-weight: 700;
+}
+.numberOfPeople{
+    width: 80%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.peopleNumberHeadline{
+    font-size: 1rem;
+    color:  hsl(186, 14%, 43%);
+}
+.numberOfPeople input{
+    width: 95%;
+    height: 50px;
+    border-radius: 9px;
+    background-color: hsl(189, 41%, 95%);
+    border: none;
+    background-image: url(/images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: center left 1rem;
+    text-align: end;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    color: #00494d;
+    font-weight: 700;
+}
+.numberOfPeople input::placeholder{
+    padding-right: 1rem;
+    font-weight: 500;
+    color:hsl(184, 14%, 56%);
+}
+        /* CALCULATE SECTION COMPLETE */
+
+.displaySection{
+    width: 44%;
+    height: 90%;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.tipDisplay{
+    width: 80%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tipAmountPerPerson{
+    display: flex;
+    flex-direction: column;
+}
+span1{
+    color: white;
+}
+span2{
+    color: hsl(184, 14%, 56%);
+}
+.tipValue{
+    color:hsl(172, 67%, 45%);
+    font-size: 3.7rem;
+    font-weight: 700;
+}
+.totalCostDisplay{
+    width: 80%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.totalCostPerPerson{
+    display: flex;
+    flex-direction: column;
+}
+.totalValue{
+    color: hsl(172, 67%, 45%);
+    font-size: 3.7rem;
+    font-weight: 700;
+}
+.resetBtn{
+    width: 80%;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+}
+.resetBtn button{
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    outline: none;
+    border: 0;
+    color: #00495d;
+    background-color: #006166;
+    font-size: 24px;
+}
+.resetBtn button:hover{
+    background-color:  hsl(185, 41%, 84%);
+    transition: .5s;
+}
+.resetBtn button{
+    cursor: pointer;
+}
