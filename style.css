@@ -315,8 +315,29 @@ span2{
         border-radius: 10px;
     }
 }
-@media(max-width:568px){
-    .backgroundContainer{
-        height: 120vh;
+@media(max-height:568px){
+    .calculateSection{
+        height: 50%;
+    }
+    .displaySection{
+        height: 50%;
+    }
+    .billing input{
+        height: 30px;
+        font-size: 20px;
+    }
+    .tipSelecting{
+        height: 50%;
+    }
+    .numberOfPeople{
+        height: 70%;
+        gap: 0;
+        padding-top: 20px;
+    }
+    .tipBlock{
+        height: 30px;
+    }
+    .numberOfPeople input{
+        height: 30px;
     }
 }
