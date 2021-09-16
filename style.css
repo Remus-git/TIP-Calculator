@@ -287,7 +287,7 @@ span2{
     }
     .displaySection{
         width:80%;
-        height: 40%;
+        height: 50vh;
     }
     .logoContainer{
         height: 10%;
@@ -314,13 +314,26 @@ span2{
     .resetBtn button{
         border-radius: 10px;
     }
+    .backgroundContainer{
+        height: 100%;
+    }
+    .mainContainer{
+        height: 100%;
+    }
+    
 }
-@media(max-height:568px){
+/* @media(max-height:860px){
+    .backgroundContainer{
+        height: 100%;
+    }
+    .mainContainer{
+        height: 90%;
+    }
     .calculateSection{
         height: 50%;
     }
     .displaySection{
-        height: 50%;
+        height: 100%;
     }
     .billing input{
         height: 30px;
@@ -340,4 +353,4 @@ span2{
     .numberOfPeople input{
         height: 30px;
     }
-}
+} */
