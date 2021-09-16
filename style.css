@@ -3,9 +3,11 @@
     margin: 0;
     font-family: 'Space Mono', monospace;
 }
-body{
-    width: 100%;
+html{
     height: 100%;
+}
+body{
+    min-height: 100%;
 }
 .backgroundContainer{
     width: 100%;
@@ -287,11 +289,13 @@ span2{
     }
     .calculateSection{
         width: 95%;
-        height: 60%;
+        min-height: 50%;
+        margin-top: 20px;
     }
     .displaySection{
         width:80%;
-        height: 50vh;
+        height: 50%;
+        margin-bottom: 20px;
     }
     .logoContainer{
         height: 10%;
@@ -319,43 +323,42 @@ span2{
         border-radius: 10px;
     }
     .backgroundContainer{
-        height: 100%;
+        min-height: 100%;
         width: 100%;
-    }
-    .mainContainer{
-        height: 100%;
-    }
-    
-}
-/* @media(max-height:860px){
-    .backgroundContainer{
-        height: 100%;
     }
     .mainContainer{
         height: 90%;
     }
-    .calculateSection{
-        height: 50%;
+    
+}
+@media(max-height:680px){
+    .resetBtn button{
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    .tipDisplay{
+        height: 30%;
+    }
+    .totalCostDisplay{
+        height: 30%;
+    }
+    .resetBtn{
+        bottom: 25px;
+        height: 20%;
     }
     .displaySection{
-        height: 100%;
+        min-height: auto;
+        display: flex;
+        position: relative;
+        padding: 5px;
     }
-    .billing input{
-        height: 30px;
-        font-size: 20px;
-    }
-    .tipSelecting{
-        height: 50%;
-    }
-    .numberOfPeople{
-        height: 70%;
-        gap: 0;
-        padding-top: 20px;
+    .calculateSection{
+        min-height: 50%;
     }
     .tipBlock{
         height: 30px;
     }
-    .numberOfPeople input{
+    .billing input{
         height: 30px;
     }
-} */
+}
