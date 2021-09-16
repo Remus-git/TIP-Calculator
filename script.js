@@ -172,9 +172,6 @@ $("#customTip").on("input",function(){
         twentyFiveCent.removeClass("tipBlockActive")
         tenCent.removeClass("tipBlockActive")
 })
-$("#customTip").focus(function(){
-    
-})
 $("#numberOfPeople").on("input",function(){
     numberOfPeople = $("#numberOfPeople").val();
     if(billValue > 0){
@@ -203,6 +200,7 @@ resetButton.click(function () {
     $(".totalValue").text("0.00")
     $("#billValue").val("")
     $("#numberOfPeople").val("")
+    $("#customTip").val("")
     tenCent.removeClass("tipBlockActive")
     fiveCent.removeClass("tipBlockActive")
     fifteenCent.removeClass("tipBlockActive")
