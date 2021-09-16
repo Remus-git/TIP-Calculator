@@ -5,13 +5,26 @@ let tipPerPerson;
 let totalPerPerson;
 let tipPerCent;
 let numberOfPeople;
+let resetButton = $("button");
 
 $("#billValue").on("input", function () {
     billValue =parseFloat( $("#billValue").val())
+    $(".tipValue").text(tipPerCent)
     if(billValue > 0){
-        
-        $(".totalValue").text(totalPerPerson);
+        tip = billValue * tipPerCent;
+        totalValue = billValue + tip;
+        totalPerPerson = totalValue/numberOfPeople;
+        tipPerPerson = tip/numberOfPeople;
+        if(isNaN(tipPerPerson)||isNaN(totalPerPerson)){
+            $(".tipValue").text("0.00")    
+            $(".totalValue").text("0.00")
+        }
+        else{
+            $(".tipValue").text(tipPerPerson.toFixed(2))
+            $(".totalValue").text(totalPerPerson.toFixed(2))
+        }
     }
+    
 });
 const fiveCent = $("#fiveCent");
 const tenCent = $("#tenCent");
@@ -20,22 +33,26 @@ const twentyFiveCent = $("#twentyFiveCent");
 const fiftyCent = $("#fiftyCent");
 fiveCent.click(function () { 
     tipPerCent = 5/100;
-     if(billValue > 0){
+    if(billValue > 0){
         tip = billValue * tipPerCent;
         totalValue = billValue + tip;
-        tipPerPerson=tip/numberOfPeople;
-        if(isNaN(tipPerPerson)){
+        totalPerPerson = totalValue/numberOfPeople;
+        tipPerPerson = tip/numberOfPeople;
+        if(isNaN(tipPerPerson)||isNaN(totalPerPerson)){
             $(".tipValue").text("0.00")    
+            $(".totalValue").text("0.00")
         }
         else{
             $(".tipValue").text(tipPerPerson.toFixed(2))
-        }    
-        if(totalPerPerson > 0){
             $(".totalValue").text(totalPerPerson.toFixed(2))
-        }
-        else{
-            $(".totalValue").text("0.00")
-        }
+        }    
+    }
+    if(tipPerCent == 0.05){
+        fiveCent.addClass("tipBlockActive")
+        tenCent.removeClass("tipBlockActive")
+        fifteenCent.removeClass("tipBlockActive")
+        twentyFiveCent.removeClass("tipBlockActive")
+        fiftyCent.removeClass("tipBlockActive")
     }
 });
 tenCent.click(function () { 
@@ -43,19 +60,23 @@ tenCent.click(function () {
     if(billValue > 0){
         tip = billValue * tipPerCent;
         totalValue = billValue + tip;
+        totalPerPerson = totalValue/numberOfPeople;
         tipPerPerson = tip/numberOfPeople;
-        if(isNaN(tipPerPerson)){
+        if(isNaN(tipPerPerson)||isNaN(totalPerPerson)){
             $(".tipValue").text("0.00")    
+            $(".totalValue").text("0.00")
         }
         else{
             $(".tipValue").text(tipPerPerson.toFixed(2))
-        }    
-        if(totalPerPerson > 0){
             $(".totalValue").text(totalPerPerson.toFixed(2))
-        }
-        else{
-            $(".totalValue").text("0.00")
-        }
+        }    
+    }
+    if(tipPerCent == 0.1){
+        tenCent.addClass("tipBlockActive")
+        fiveCent.removeClass("tipBlockActive")
+        fifteenCent.removeClass("tipBlockActive")
+        twentyFiveCent.removeClass("tipBlockActive")
+        fiftyCent.removeClass("tipBlockActive")
     }
 });
 fifteenCent.click(function () { 
@@ -63,19 +84,23 @@ fifteenCent.click(function () {
     if(billValue > 0){
         tip = billValue * tipPerCent;
         totalValue = billValue + tip;
+        totalPerPerson = totalValue/numberOfPeople;
         tipPerPerson = tip/numberOfPeople;
-        if(isNaN(tipPerPerson)){
+        if(isNaN(tipPerPerson)||isNaN(totalPerPerson)){
             $(".tipValue").text("0.00")    
+            $(".totalValue").text("0.00")
         }
         else{
             $(".tipValue").text(tipPerPerson.toFixed(2))
-        }    
-        if(totalPerPerson > 0){
             $(".totalValue").text(totalPerPerson.toFixed(2))
-        }
-        else{
-            $(".totalValue").text("0.00")
-        }
+        }    
+    }
+    if(tipPerCent == 0.15){
+        fifteenCent.addClass("tipBlockActive")
+        fiveCent.removeClass("tipBlockActive")
+        tenCent.removeClass("tipBlockActive")
+        twentyFiveCent.removeClass("tipBlockActive")
+        fiftyCent.removeClass("tipBlockActive")
     }
 });
 twentyFiveCent.click(function () { 
@@ -83,43 +108,27 @@ twentyFiveCent.click(function () {
     if(billValue > 0){
         tip = billValue * tipPerCent;
         totalValue = billValue + tip;
+        totalPerPerson = totalValue/numberOfPeople;
         tipPerPerson = tip/numberOfPeople;
-        if(isNaN(tipPerPerson)){
+        if(isNaN(tipPerPerson)||isNaN(totalPerPerson)){
             $(".tipValue").text("0.00")    
+            $(".totalValue").text("0.00")
         }
         else{
             $(".tipValue").text(tipPerPerson.toFixed(2))
-        }    
-        if(totalPerPerson > 0){
             $(".totalValue").text(totalPerPerson.toFixed(2))
-        }
-        else{
-            $(".totalValue").text("0.00")
-        }
+        }    
+    }
+    if(tipPerCent == 0.25){
+        twentyFiveCent.addClass("tipBlockActive")
+        fiveCent.removeClass("tipBlockActive")
+        fifteenCent.removeClass("tipBlockActive")
+        tenCent.removeClass("tipBlockActive")
+        fiftyCent.removeClass("tipBlockActive")
     }
 });
 fiftyCent.click(function () { 
     tipPerCent = 50/100;
-    if(billValue > 0){
-        tip = billValue * tipPerCent;
-        totalValue = billValue + tip;
-        tipPerPerson = tip/numberOfPeople;
-        if(isNaN(tipPerPerson)){
-            $(".tipValue").text("0.00")    
-        }
-        else{
-            $(".tipValue").text(tipPerPerson.toFixed(2))
-        }    
-        if(totalPerPerson > 0){
-            $(".totalValue").text(totalPerPerson.toFixed(2))
-        }
-        else{
-            $(".totalValue").text("0.00")
-        }
-       }
-});
-$("#customTip").on("input",function(){
-    tipPerCent = parseFloat($("#customTip").val())/100;
     if(billValue > 0){
         tip = billValue * tipPerCent;
         totalValue = billValue + tip;
@@ -133,22 +142,65 @@ $("#customTip").on("input",function(){
             $(".totalValue").text(totalPerPerson.toFixed(2))
         }    
     }
+    if(tipPerCent == 0.5){
+        fiftyCent.addClass("tipBlockActive")
+        fiveCent.removeClass("tipBlockActive")
+        fifteenCent.removeClass("tipBlockActive")
+        twentyFiveCent.removeClass("tipBlockActive")
+        tenCent.removeClass("tipBlockActive")
+    }  
+});
+$("#customTip").on("input",function(){
+    tipPerCent = parseFloat($("#customTip").val())/100;
+    if(billValue > 0){
+        tip = billValue * tipPerCent;
+        totalValue = billValue + tip;
+        totalPerPerson = totalValue/numberOfPeople;
+        tipPerPerson = tip/numberOfPeople;
+        if(isNaN(tipPerPerson)||isNaN(totalPerPerson)){
+            $(".tipValue").text("0.00")    
+            $(".totalValue").text("0.00")
+        }
+        else{
+            $(".tipValue").text(tipPerPerson.toFixed(2))
+            $(".totalValue").text(totalPerPerson.toFixed(2))
+        }
+    }
+        fiftyCent.removeClass("tipBlockActive")
+        fiveCent.removeClass("tipBlockActive")
+        fifteenCent.removeClass("tipBlockActive")
+        twentyFiveCent.removeClass("tipBlockActive")
+        tenCent.removeClass("tipBlockActive")
+})
+$("#customTip").focus(function(){
+    
 })
 $("#numberOfPeople").on("input",function(){
     numberOfPeople = $("#numberOfPeople").val();
-    tipPerPerson = tip/numberOfPeople;
-    if(isNaN(tipPerPerson)){
-        $(".tipValue").text("0.00")    
+    if(billValue > 0){
+        tip = billValue * tipPerCent;
+        totalValue = billValue + tip;
+        totalPerPerson = totalValue/numberOfPeople;
+        tipPerPerson = tip/numberOfPeople;
+        if(isNaN(tipPerPerson)||isNaN(totalPerPerson)){
+            $(".tipValue").text("0.00")
+            $(".totalValue").text("0.00")
+        }
+        else{
+            $(".tipValue").text(tipPerPerson.toFixed(2))
+            $(".totalValue").text(totalPerPerson.toFixed(2))
+        }
     }
     else{
-        $(".tipValue").text(tipPerPerson.toFixed(2))
-    }    
-    totalPerPerson = totalValue/numberOfPeople;
-    if(isNaN(totalPerPerson)){
-        $(".totalValue").text("0.00")
+        $(".tipValue").text("0.00")
+            $(".totalValue").text("0.00")
     }
-    else{
-        $(".totalValue").text(totalPerPerson.toFixed(2))
-    }
+    
 })
+resetButton.click(function () { 
+    billValue=tip=numberOfPeople=tipPerCent=totalPerPerson=tipPerPerson=totalValue=0;
+    $(".tipValue").text("0.00")
+    $(".totalValue").text("0.00")
+    
+});
 
