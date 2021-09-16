@@ -201,6 +201,12 @@ resetButton.click(function () {
     billValue=tip=numberOfPeople=tipPerCent=totalPerPerson=tipPerPerson=totalValue=0;
     $(".tipValue").text("0.00")
     $(".totalValue").text("0.00")
-    
+    $("#billValue").val("")
+    $("#numberOfPeople").val("")
+    tenCent.removeClass("tipBlockActive")
+    fiveCent.removeClass("tipBlockActive")
+    fifteenCent.removeClass("tipBlockActive")
+    twentyFiveCent.removeClass("tipBlockActive")
+    fiftyCent.removeClass("tipBlockActive")
 });
 
